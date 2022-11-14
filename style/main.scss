@@ -1,0 +1,137 @@
+@import 'fonts.scss';
+
+@mixin respond-to($media) {
+  @if $media == mobile {
+    @media only screen and (max-width: 480px) { @content; }
+  }
+  @else if $media == tablet {
+    @media only screen and (min-width: 481px) and (max-width: 768px) { @content; }
+  }
+  @else if $media == desktop {
+    @media only screen and (min-width: 769px) { @content; }
+  }
+}
+
+$white-color: #fff;
+$black-color: #000;
+$dark-grey-color: #4B4B4B;
+$green-color: #69C0C1;
+$beige-color: #EBEBF9;
+
+$burger-button-width: 40px;
+
+%list {
+  list-style: none;
+}
+
+%button {
+  text-decoration: none;
+  &:visited &:hover &:active {
+    color: inherit;
+  }
+}
+
+.content {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.content-header {
+  @include respond-to(tablet) { padding: 0 20px; }
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100px;
+  font-size: 18px;
+  box-shadow: 0px 4px 36px rgba(139, 139, 139, 0.08);
+
+  &__nav {
+    @include respond-to(desktop) { margin: 0 115px; }
+    @include respond-to(tablet) { margin: 0 20px; }
+    @include respond-to(mobile) { visibility: hidden; }
+    flex-grow: 1;
+  }
+
+  &__list {
+    @extend  %list;
+    @include respond-to(desktop) { font-size: 16px; }
+    @include respond-to(tablet) { font-size: 14px; }
+    @include respond-to(mobile) { display: block; }
+    justify-content: space-between;
+    color: $dark-grey-color;
+    padding: 0;
+  }
+
+  &__button {
+    @extend %button;
+    width: 170px;
+    height: 43px;
+    line-height: 43px;
+    text-align: center;
+    background-color: $green-color;
+    color: white;
+    border-radius: 51px;
+  }
+
+  &__burger-button {
+    @include respond-to(tablet) { visibility: hidden; }
+    @include respond-to(desktop) { visibility: hidden; }
+  }
+}
+
+.burger-button {
+  position: relative;
+  width: $burger-button-width;
+  margin: 0 16px;
+
+  &__inner {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: $burger-button-width;
+
+    &:before, &:after, div {
+      background: $black-color;
+      content: "";
+      display: block;
+      height: 5px;
+      border-radius: 3px;
+      margin: 7px 0;
+      transition: 0.5s;
+    }
+
+    &:hover:before {
+      transform: translateY(12px) rotate(135deg);
+    }
+
+    &:hover:after {
+      transform: translateY(-12px) rotate(-135deg);
+    }
+
+    &:hover div {
+      transform: scale(0);
+    }
+  }
+}
+
+.modal {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: $black-color;
+  opacity: 0.5;
+  visibility: hidden;
+
+  &--visible {
+    visibility: visible;
+  }
+
+  &__overlay {
+    width: 250px;
+    height: 100vh;
+    float: right;
+    opacity: 1;
+    background-color: $beige-color;
+  }
+}
