@@ -1,0 +1,31 @@
+@import 'base.scss';
+
+.why-vpn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 210px;
+  height: 733px;
+
+  @include respond-to(tablet) {
+    height: 671px;
+  }
+  @include respond-to(mobile) {
+    height: 497px;
+  }
+
+  &__img {
+    width: 555px;
+    height: 487px;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 46px;
+    color: $green-color;
+  }
+
+  &__text {
+    color: $dark-grey-color;
+  }
+}

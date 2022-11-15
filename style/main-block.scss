@@ -1,0 +1,76 @@
+@import 'base.scss';
+
+.main {
+  height: 650px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: $light-beige-color;
+  background-image: url('../images/main.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @include respond-to(tablet) {
+    height: 750px;
+  }
+  @include respond-to(mobile) {
+    height: 545px;
+  }
+
+  &__narrow {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  &__inner {
+    width: 825px;
+    justify-content: start;
+  }
+
+  &__text {
+    padding: 35px 0 50px 0;
+    background-color: $light-beige-color;
+  }
+
+  &__title {
+    color: $black-color;
+    font-weight: 600;
+    font-size: 46px;
+    line-height: 48.3px;
+
+    span {
+      color: $green-color;
+    }
+  }
+
+  &__text {
+    color: $dark-grey-color;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27.5px;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 30px;
+  }
+
+  &__button-reg {
+    display: block;
+    width: 270px;
+    line-height: 55px;
+    border-radius: 64px;
+    color: $white-color;
+    text-align: center;
+  }
+
+  &__button-contact {
+    display: block;
+    width: 270px;
+    line-height: 55px;
+    border-radius: 64px;
+    color: $darkest-grey-color;
+    text-align: center;
+  }
+}

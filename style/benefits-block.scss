@@ -1,0 +1,45 @@
+@import 'base.scss';
+
+.benefits {
+  height: 744px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 98px;
+  background-color: $light-beige-color;
+
+  @include respond-to(tablet) {
+    height: 839px;
+  }
+  @include respond-to(mobile) {
+    height: 1494px;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 46px;
+    color: $green-color;
+    text-align: center;
+  }
+
+  &__items {
+    display: grid;
+    align-items: start;
+    row-gap: 105px;
+    column-gap: 145px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__item {
+    width: 300px;
+    font-weight: 400;
+    font-size: 28px;
+    color: $dark-grey-color;
+    text-align: center;
+
+    img {
+      width: 60px;
+      height: 60px;
+    }
+  }
+}

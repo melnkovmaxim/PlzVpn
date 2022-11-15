@@ -1,0 +1,117 @@
+@import 'fonts.css';
+
+$white-color: #fff;
+$black-color: #000;
+$darkest-grey-color: #242424;
+$dark-grey-color: #4B4B4B;
+$light-grey-color: #E0E5EF;
+$green-color: #69C0C1;
+$beige-color: #EBEBF9;
+$light-beige-color: #F7F7FF;
+
+$burger-button-width: 40px;
+
+@mixin respond-to($media) {
+  @if $media == mobile {
+    @media only screen and (max-width: 480px) {
+      @content;
+    }
+  } @else if $media == tablet {
+    @media only screen and (min-width: 481px) and (max-width: 768px) {
+      @content;
+    }
+  } @else if $media == desktop {
+    @media only screen and (min-width: 769px) {
+      @content;
+    }
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+
+  &:visited &:hover &:active {
+    color: inherit;
+  }
+}
+
+.narrow {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+
+
+.burger-button {
+  position: relative;
+  width: $burger-button-width;
+  margin: 0 16px;
+
+  &__inner {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: $burger-button-width;
+
+    &:before, &:after, div {
+      background: $black-color;
+      content: "";
+      display: block;
+      height: 5px;
+      border-radius: 3px;
+      margin: 7px 0;
+      transition: 0.5s;
+    }
+
+    &--toggled:before {
+      transform: translateY(12px) rotate(135deg);
+    }
+
+    &--toggled:after {
+      transform: translateY(-12px) rotate(-135deg);
+    }
+
+    &--toggled div {
+      transform: scale(0);
+    }
+  }
+}
+
+.button {
+  &--green {
+    background-color: $green-color;
+    border: 2px solid $green-color;
+  }
+
+  &--green-outlined {
+    background-color: transparent;
+    border: 2px solid $green-color;
+  }
+}
+
+.modal {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($black-color, 0.5);
+  visibility: hidden;
+
+  &--visible {
+    @include respond-to(mobile) {
+      visibility: visible;
+    }
+  }
+
+  &__overlay {
+    width: 250px;
+    height: 100vh;
+    float: right;
+    opacity: 1;
+    background-color: $beige-color;
+  }
+}

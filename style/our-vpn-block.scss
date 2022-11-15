@@ -1,0 +1,55 @@
+@import 'base.scss';
+
+.our-vpn {
+  height: 1102px;
+
+  @include respond-to(tablet) {
+    height: 1385px;
+  }
+  @include respond-to(mobile) {
+    height: 1175px;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 46px;
+    color: $green-color;
+    text-align: center;
+  }
+
+  &__description {
+    max-width: 930px;
+    margin: 0 auto;
+    padding: 35px 0 80px 0;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 125%;
+    text-align: center;
+  }
+
+  &__benefits {
+    display: flex;
+    justify-content: space-between;
+
+    img {
+      width: 570px;
+      height: 645px;
+    }
+  }
+
+  &__benefits-item {
+    color: $dark-grey-color;
+    font-width: 400;
+    font-size: 24px;
+
+    span {
+      font-weight: 500;
+      font-size: 28px;
+      color: $darkest-grey-color;
+    }
+
+    p {
+      max-width: 470px;
+    }
+  }
+}

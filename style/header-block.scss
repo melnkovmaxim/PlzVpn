@@ -1,0 +1,79 @@
+@import 'base.scss';
+
+.header {
+  @include respond-to(tablet) {
+    padding: 0 20px;
+  }
+  @include respond-to(mobile) {
+    padding: 0 20px;
+  }
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100px;
+  font-size: 18px;
+  box-shadow: 0px 4px 36px rgba(139, 139, 139, 0.08);
+
+  &__nav {
+    @include respond-to(desktop) {
+      margin: 0 115px;
+    }
+    @include respond-to(tablet) {
+      margin: 0 20px;
+    }
+    @include respond-to(mobile) {
+      visibility: hidden;
+    }
+
+    flex-grow: 1;
+
+    &--visible {
+      visibility: visible;
+    }
+  }
+
+  &__list {
+    @include respond-to(desktop) {
+      font-size: 16px;
+    }
+    @include respond-to(tablet) {
+      font-size: 14px;
+    }
+    @include respond-to(mobile) {
+      position: absolute;
+      flex-direction: column;
+      right: 0;
+      width: 225px;
+      margin: 50px 0 0 0;
+      gap: 25px;
+    }
+
+    display: flex;
+    justify-content: space-between;
+    color: $dark-grey-color;
+    padding: 0;
+  }
+
+  &__list-item {
+    color: $darkest-grey-color;
+  }
+
+  &__button {
+    width: 170px;
+    height: 43px;
+    line-height: 43px;
+    text-align: center;
+    background-color: $green-color;
+    color: white;
+    border-radius: 51px;
+  }
+
+  &__burger-button {
+    @include respond-to(tablet) {
+      visibility: hidden;
+    }
+    @include respond-to(desktop) {
+      visibility: hidden;
+    }
+  }
+}
