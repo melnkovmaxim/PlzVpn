@@ -2,13 +2,17 @@
 
 @mixin respond-to($media) {
   @if $media == mobile {
-    @media only screen and (max-width: 480px) { @content; }
-  }
-  @else if $media == tablet {
-    @media only screen and (min-width: 481px) and (max-width: 768px) { @content; }
-  }
-  @else if $media == desktop {
-    @media only screen and (min-width: 769px) { @content; }
+    @media only screen and (max-width: 480px) {
+      @content;
+    }
+  } @else if $media == tablet {
+    @media only screen and (min-width: 481px) and (max-width: 768px) {
+      @content;
+    }
+  } @else if $media == desktop {
+    @media only screen and (min-width: 769px) {
+      @content;
+    }
   }
 }
 
@@ -17,6 +21,7 @@ $black-color: #000;
 $dark-grey-color: #4B4B4B;
 $green-color: #69C0C1;
 $beige-color: #EBEBF9;
+$light-beige-color: #F7F7FF;
 
 $burger-button-width: 40px;
 
@@ -26,6 +31,7 @@ $burger-button-width: 40px;
 
 %button {
   text-decoration: none;
+
   &:visited &:hover &:active {
     color: inherit;
   }
@@ -36,8 +42,66 @@ $burger-button-width: 40px;
   margin: 0 auto;
 }
 
+.main {
+  height: 650px;
+  background-color: $light-beige-color;
+
+  @include respond-to(mobile) {
+    height: 545px;
+  }
+}
+
+.why-vpn {
+  height: 733px;
+
+  @include respond-to(tablet) {
+    height: 671px;
+  }
+  @include respond-to(mobile) {
+    height: 497px;
+  }
+}
+
+.benefits {
+  height: 744px;
+
+  @include respond-to(tablet) {
+    height: 839px;
+  }
+  @include respond-to(mobile) {
+    height: 1494px;
+  }
+}
+
+.our-vpn {
+  height: 1102px;
+
+  @include respond-to(tablet) {
+    height: 1385px;
+  }
+  @include respond-to(mobile) {
+    height: 1175px;
+  }
+}
+
+.questions {
+  height: 704px;
+
+  @include respond-to(tablet) {
+    height: 675px;
+  }
+  @include respond-to(mobile) {
+    height: 563px;
+  }
+}
+
 .content-header {
-  @include respond-to(tablet) { padding: 0 20px; }
+  @include respond-to(tablet) {
+    padding: 0 20px;
+  }
+  @include respond-to(mobile) {
+    padding: 0 20px;
+  }
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -46,17 +110,41 @@ $burger-button-width: 40px;
   box-shadow: 0px 4px 36px rgba(139, 139, 139, 0.08);
 
   &__nav {
-    @include respond-to(desktop) { margin: 0 115px; }
-    @include respond-to(tablet) { margin: 0 20px; }
-    @include respond-to(mobile) { visibility: hidden; }
+    @include respond-to(desktop) {
+      margin: 0 115px;
+    }
+    @include respond-to(tablet) {
+      margin: 0 20px;
+    }
+    @include respond-to(mobile) {
+      visibility: hidden;
+    }
+
     flex-grow: 1;
+
+    &--visible {
+      visibility: visible;
+    }
   }
 
   &__list {
-    @extend  %list;
-    @include respond-to(desktop) { font-size: 16px; }
-    @include respond-to(tablet) { font-size: 14px; }
-    @include respond-to(mobile) { display: block; }
+    @extend %list;
+    @include respond-to(desktop) {
+      font-size: 16px;
+    }
+    @include respond-to(tablet) {
+      font-size: 14px;
+    }
+    @include respond-to(mobile) {
+      position: absolute;
+      flex-direction: column;
+      right: 0;
+      width: 225px;
+      margin: 50px 0 0 0;
+      gap: 25px;
+    }
+
+    display: flex;
     justify-content: space-between;
     color: $dark-grey-color;
     padding: 0;
@@ -74,8 +162,12 @@ $burger-button-width: 40px;
   }
 
   &__burger-button {
-    @include respond-to(tablet) { visibility: hidden; }
-    @include respond-to(desktop) { visibility: hidden; }
+    @include respond-to(tablet) {
+      visibility: hidden;
+    }
+    @include respond-to(desktop) {
+      visibility: hidden;
+    }
   }
 }
 
@@ -101,15 +193,15 @@ $burger-button-width: 40px;
       transition: 0.5s;
     }
 
-    &:hover:before {
+    &--toggled:before {
       transform: translateY(12px) rotate(135deg);
     }
 
-    &:hover:after {
+    &--toggled:after {
       transform: translateY(-12px) rotate(-135deg);
     }
 
-    &:hover div {
+    &--toggled div {
       transform: scale(0);
     }
   }
@@ -119,12 +211,13 @@ $burger-button-width: 40px;
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: $black-color;
-  opacity: 0.5;
+  background-color: rgba($black-color, 0.5);
   visibility: hidden;
 
   &--visible {
-    visibility: visible;
+    @include respond-to(mobile) {
+      visibility: visible;
+    }
   }
 
   &__overlay {
