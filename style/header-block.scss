@@ -22,13 +22,13 @@
       margin: 0 20px;
     }
     @include respond-to(mobile) {
-      visibility: hidden;
+      overflow: hidden;
     }
 
     flex-grow: 1;
 
     &--visible {
-      visibility: visible;
+      overflow: visible;
     }
   }
 
@@ -70,10 +70,10 @@
 
   &__burger-button {
     @include respond-to(tablet) {
-      visibility: hidden;
+      overflow: hidden;
     }
     @include respond-to(desktop) {
-      visibility: hidden;
+      overflow: hidden;
     }
   }
 }

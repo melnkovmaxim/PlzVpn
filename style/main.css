@@ -6,6 +6,10 @@
 @import 'fonts.css';
 @import 'fonts.css';
 @import 'fonts.css';
+body {
+  font-family: TT Hoves;
+}
+
 ul {
   list-style: none;
 }
@@ -19,6 +23,7 @@ a:visited a:hover a:active {
 
 .narrow {
   max-width: 1170px;
+  box-sizing: border-box;
   margin: 0 auto;
 }
 
@@ -82,6 +87,10 @@ a:visited a:hover a:active {
   background-color: #EBEBF9;
 }
 
+body {
+  font-family: TT Hoves;
+}
+
 ul {
   list-style: none;
 }
@@ -95,6 +104,7 @@ a:visited a:hover a:active {
 
 .narrow {
   max-width: 1170px;
+  box-sizing: border-box;
   margin: 0 auto;
 }
 
@@ -191,11 +201,11 @@ a:visited a:hover a:active {
 }
 @media only screen and (max-width: 480px) {
   .header__nav {
-    visibility: hidden;
+    overflow: hidden;
   }
 }
 .header__nav--visible {
-  visibility: visible;
+  overflow: visible;
 }
 .header__list {
   display: flex;
@@ -237,13 +247,17 @@ a:visited a:hover a:active {
 }
 @media only screen and (min-width: 481px) and (max-width: 768px) {
   .header__burger-button {
-    visibility: hidden;
+    overflow: hidden;
   }
 }
 @media only screen and (min-width: 769px) {
   .header__burger-button {
-    visibility: hidden;
+    overflow: hidden;
   }
+}
+
+body {
+  font-family: TT Hoves;
 }
 
 ul {
@@ -259,6 +273,7 @@ a:visited a:hover a:active {
 
 .narrow {
   max-width: 1170px;
+  box-sizing: border-box;
   margin: 0 auto;
 }
 
@@ -391,6 +406,10 @@ a:visited a:hover a:active {
   text-align: center;
 }
 
+body {
+  font-family: TT Hoves;
+}
+
 ul {
   list-style: none;
 }
@@ -404,6 +423,7 @@ a:visited a:hover a:active {
 
 .narrow {
   max-width: 1170px;
+  box-sizing: border-box;
   margin: 0 auto;
 }
 
@@ -494,7 +514,13 @@ a:visited a:hover a:active {
   color: #69C0C1;
 }
 .why-vpn__text {
+  font-weight: 400;
+  font-size: 24px;
   color: #4B4B4B;
+}
+
+body {
+  font-family: TT Hoves;
 }
 
 ul {
@@ -510,6 +536,7 @@ a:visited a:hover a:active {
 
 .narrow {
   max-width: 1170px;
+  box-sizing: border-box;
   margin: 0 auto;
 }
 
@@ -616,6 +643,10 @@ a:visited a:hover a:active {
   height: 60px;
 }
 
+body {
+  font-family: TT Hoves;
+}
+
 ul {
   list-style: none;
 }
@@ -629,6 +660,7 @@ a:visited a:hover a:active {
 
 .narrow {
   max-width: 1170px;
+  box-sizing: border-box;
   margin: 0 auto;
 }
 
@@ -742,6 +774,10 @@ a:visited a:hover a:active {
   max-width: 470px;
 }
 
+body {
+  font-family: TT Hoves;
+}
+
 ul {
   list-style: none;
 }
@@ -755,6 +791,7 @@ a:visited a:hover a:active {
 
 .narrow {
   max-width: 1170px;
+  box-sizing: border-box;
   margin: 0 auto;
 }
 
@@ -818,9 +855,6 @@ a:visited a:hover a:active {
   background-color: #EBEBF9;
 }
 
-.questions {
-  height: 704px;
-}
 @media only screen and (min-width: 481px) and (max-width: 768px) {
   .questions {
     height: 675px;
@@ -844,20 +878,43 @@ a:visited a:hover a:active {
   text-align: center;
 }
 .questions__item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 75px;
+  background-color: #F7F7FF;
   margin: 30px 0 0 0;
   padding: 0 35px;
   background-color: #F7F7FF;
   border-radius: 16px;
   box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.02), 0px 2px 4px rgba(0, 0, 0, 0.08);
 }
-.questions__item p {
+.questions__question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 75px;
+}
+.questions__question p {
   font-weight: 400;
   font-size: 21px;
   color: #4B4B4B;
+}
+.questions__answer {
+  display: none;
+  font-weight: 300;
+  font-size: 18px;
+  padding: 0 0 25px 0;
+  color: #4B4B4B;
+}
+.questions__checkbox {
+  display: none;
+}
+.questions__checkbox[type=checkbox]:checked ~ .questions__answer {
+  display: block;
+}
+.questions__checkbox[type=checkbox]:checked ~ .questions__question .questions__arrow {
+  transform: rotate(180deg);
+}
+
+body {
+  font-family: TT Hoves;
 }
 
 ul {
@@ -873,6 +930,7 @@ a:visited a:hover a:active {
 
 .narrow {
   max-width: 1170px;
+  box-sizing: border-box;
   margin: 0 auto;
 }
 
