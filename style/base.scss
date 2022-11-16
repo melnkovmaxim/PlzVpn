@@ -29,6 +29,12 @@ $burger-button-width: 40px;
 
 body {
   font-family: TT Hoves;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.no-wrap {
+  white-space: nowrap;
 }
 
 ul {
@@ -44,9 +50,12 @@ a {
 }
 
 .narrow {
-  max-width: 1170px;
   box-sizing: border-box;
   margin: 0 auto;
+
+  @include respond-to(desktop) {
+    max-width: 1170px;
+  }
 }
 
 .burger-button {

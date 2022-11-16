@@ -1,6 +1,7 @@
 @import 'base.scss';
 
 .footer {
+  margin: 125px auto 0;
 
   &__divider {
     border: 1px solid $light-grey-color;
@@ -8,12 +9,20 @@
 
   &__nav {
     display: flex;
+    align-items: center;
+    padding: 9px 0;
   }
 
   &__list {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    align-items: center;
+    margin: 0 auto;
+    max-width: 850px;
+
+    @include respond-to(mobile) {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 
   &__list-container {
@@ -22,14 +31,48 @@
 
   &__list-item {
     color: $dark-grey-color;
+    font-size: 18px;
+
+    @include respond-to(tablet) {
+      font-size: 14px;
+    }
+
+    @include respond-to(mobile) {
+      font-size: 14px;
+    }
+  }
+
+  &__logo {
+    width: 62px;
+    height: 70px;
   }
 
   &__content {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
 
     p {
       color: $dark-grey-color;
+
+      @include respond-to(tablet) {
+        font-size: 14px;
+      }
+
+      @include respond-to(mobile) {
+        font-size: 14px;
+      }
+    }
+  }
+
+  &__copyright-duplicate {
+    @include respond-to(tablet) {
+      display: none;
+    }
+
+    @include respond-to(mobile) {
+      display: none;
     }
   }
 
@@ -37,7 +80,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 10px;
+    gap: 28px;
+
+    @include respond-to(tablet) {
+      font-size: 14px;
+    }
+
+    @include respond-to(mobile) {
+      font-size: 14px;
+    }
 
     a {
       color: $dark-grey-color;

@@ -1,10 +1,6 @@
 @import 'base.scss';
 
 .why-vpn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 210px;
   height: 733px;
 
   @include respond-to(tablet) {
@@ -14,20 +10,59 @@
     height: 497px;
   }
 
-  &__img {
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 73px 0;
+    gap: 143px;
+  }
+
+  &__image {
     width: 555px;
     height: 487px;
+    margin: 45px 0 0 0;
+
+    @include respond-to(tablet) {
+      width: 352px;
+      height: 309px;
+    }
+
+    @include respond-to(mobile) {
+      display: none;
+    }
   }
 
   &__title {
     font-weight: 600;
     font-size: 46px;
     color: $green-color;
+    margin: 50px 0 0 0;
+
+    @include respond-to(tablet) {
+      font-size: 38px;
+    }
+
+    @include respond-to(mobile) {
+      font-size: 34px;
+    }
   }
 
   &__text {
     font-weight: 400;
     font-size: 24px;
+    line-height: 30px;
     color: $dark-grey-color;
+    padding: 10px 0 0 0;
+
+    @include respond-to(tablet) {
+      font-size: 21px;
+      line-height: 26px;
+    }
+
+    @include respond-to(mobile) {
+      font-size: 18px;
+      line-height: 22px;
+    }
   }
 }

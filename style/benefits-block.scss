@@ -1,18 +1,23 @@
 @import 'base.scss';
 
 .benefits {
-  height: 744px;
+  min-height: 744px;
+  max-width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 98px;
   background-color: $light-beige-color;
+  box-sizing: border-box;
 
   @include respond-to(tablet) {
-    height: 839px;
+    min-height: 839px;
+    padding: 50px 0;
+    height: 939px;
   }
   @include respond-to(mobile) {
-    height: 1494px;
+    min-height: 1494px;
+    padding: 35px 0;
+    height: 1694px;
   }
 
   &__title {
@@ -20,26 +25,48 @@
     font-size: 46px;
     color: $green-color;
     text-align: center;
+    margin: 90px 0 0 0;
+
+    @include respond-to(tablet) {
+      font-size: 38px;
+    }
+
+    @include respond-to(mobile) {
+      font-size: 34px;
+    }
   }
 
   &__items {
     display: grid;
     align-items: start;
-    row-gap: 105px;
-    column-gap: 145px;
+    row-gap: 55px;
+    column-gap: 95px;
     grid-template-columns: repeat(3, 1fr);
+    padding: 65px 0 0 0;
+
+    @include respond-to(tablet) {
+      row-gap: 105px;
+      column-gap: 84px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond-to(mobile) {
+      column-gap: 0;
+      justify-items: center;
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 
   &__item {
-    width: 300px;
+    max-width: 325px;
     font-weight: 400;
     font-size: 28px;
     color: $dark-grey-color;
     text-align: center;
 
     img {
-      width: 60px;
-      height: 60px;
+      width: 75px;
+      height: 75px;
     }
   }
 }

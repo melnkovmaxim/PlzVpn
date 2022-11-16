@@ -16,19 +16,19 @@
 
   &__nav {
     @include respond-to(desktop) {
-      margin: 0 115px;
+      margin: 0 3%;
     }
     @include respond-to(tablet) {
-      margin: 0 20px;
+      margin: 0 1%;
     }
     @include respond-to(mobile) {
-      overflow: hidden;
+      display: none;
     }
 
     flex-grow: 1;
 
     &--visible {
-      overflow: visible;
+      display: block;
     }
   }
 
@@ -56,6 +56,15 @@
 
   &__list-item {
     color: $darkest-grey-color;
+    font-size: 18px;
+
+    @include respond-to(tablet) {
+      font-size: 14px;
+    }
+
+    @include respond-to(mobile) {
+      font-size: 14px;
+    }
   }
 
   &__button {
@@ -70,10 +79,10 @@
 
   &__burger-button {
     @include respond-to(tablet) {
-      overflow: hidden;
+      display: none;
     }
     @include respond-to(desktop) {
-      overflow: hidden;
+      display: none;
     }
   }
 }

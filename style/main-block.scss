@@ -6,9 +6,13 @@
   flex-direction: column;
   justify-content: center;
   background-color: $light-beige-color;
-  background-image: url('../images/main.png');
-  background-repeat: no-repeat;
-  background-size: cover;
+
+  @include respond-to(desktop) {
+    background-image: url('../images/main.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 
   @include respond-to(tablet) {
     height: 750px;
@@ -23,13 +27,8 @@
     flex-direction: column;
   }
 
-  &__inner {
-    width: 825px;
-    justify-content: start;
-  }
-
   &__text {
-    padding: 35px 0 50px 0;
+    margin: 35px 0 0;
     background-color: $light-beige-color;
   }
 
@@ -38,6 +37,20 @@
     font-weight: 600;
     font-size: 46px;
     line-height: 48.3px;
+    max-width: 820px;
+    margin: 37px 0 0;
+
+    @include respond-to(tablet) {
+      font-size: 38px;
+      line-height: 39.9px;
+      text-align: center;
+    }
+
+    @include respond-to(mobile) {
+      font-size: 32px;
+      line-height: 33.3px;
+      text-align: center;
+    }
 
     span {
       color: $green-color;
@@ -49,28 +62,60 @@
     font-weight: 400;
     font-size: 22px;
     line-height: 27.5px;
+    max-width: 750px;
+
+    @include respond-to(tablet) {
+      font-size: 21px;
+      line-height: 26.25px;
+      text-align: center;
+    }
+
+    @include respond-to(mobile) {
+      font-size: 16px;
+      line-height: 20px;
+      text-align: center;
+    }
   }
 
   &__buttons {
     display: flex;
-    gap: 30px;
+    gap: 28px;
+    margin: 50px 0;
+
+    @include respond-to(tablet) {
+      justify-content: center;
+    }
+
+    @include respond-to(mobile) {
+      justify-content: center;
+    }
   }
 
   &__button-reg {
     display: block;
-    width: 270px;
-    line-height: 55px;
+    width: 265px;
+    line-height: 51px;
     border-radius: 64px;
     color: $white-color;
     text-align: center;
+    font-size: 18px;
+
+    @include respond-to(mobile) {
+      font-size: 14px;
+    }
   }
 
   &__button-contact {
     display: block;
-    width: 270px;
-    line-height: 55px;
+    width: 265px;
+    line-height: 51px;
     border-radius: 64px;
     color: $darkest-grey-color;
     text-align: center;
+    font-size: 18px;
+
+    @include respond-to(mobile) {
+      font-size: 14px;
+    }
   }
 }
