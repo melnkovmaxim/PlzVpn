@@ -15,7 +15,7 @@
   }
 
   @include respond-to(tablet) {
-    height: 750px;
+    height: 650px;
   }
   @include respond-to(mobile) {
     height: 545px;
@@ -44,6 +44,7 @@
       font-size: 38px;
       line-height: 39.9px;
       text-align: center;
+      margin: 0;
     }
 
     @include respond-to(mobile) {
@@ -68,6 +69,9 @@
       font-size: 21px;
       line-height: 26.25px;
       text-align: center;
+      margin: 40px auto 0;
+      display: inline-block;
+      max-width: 660px;
     }
 
     @include respond-to(mobile) {

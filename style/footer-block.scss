@@ -3,6 +3,10 @@
 .footer {
   margin: 125px auto 0;
 
+  @include respond-to(tablet) {
+    margin: 90px auto 0;
+  }
+
   &__divider {
     border: 1px solid $light-grey-color;
   }
@@ -11,6 +15,10 @@
     display: flex;
     align-items: center;
     padding: 9px 0;
+
+    @include respond-to(tablet) {
+      padding: 9px 10px;
+    }
   }
 
   &__list {
@@ -52,6 +60,10 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px 0;
+
+    @include respond-to(tablet) {
+      padding: 20px 20px;
+    }
 
     p {
       color: $dark-grey-color;
