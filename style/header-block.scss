@@ -16,6 +16,7 @@
 
   &__nav {
     @include respond-to(desktop) {
+      padding: 0 80px;
       margin: 0 3%;
     }
     @include respond-to(tablet) {
