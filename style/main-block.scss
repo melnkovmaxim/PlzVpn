@@ -30,6 +30,10 @@
   &__text {
     margin: 35px 0 0;
     background-color: $light-beige-color;
+
+    @media screen and (min-width: 769px) and (max-width: 1070px) {
+      background-color: transparent;
+    }
   }
 
   &__title {

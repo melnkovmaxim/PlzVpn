@@ -415,6 +415,11 @@ a:visited a:hover a:active {
   margin: 35px 0 0;
   background-color: #F7F7FF;
 }
+@media screen and (min-width: 769px) and (max-width: 1070px) {
+  .main__text {
+    background-color: transparent;
+  }
+}
 .main__title {
   color: #000;
   font-weight: 600;
@@ -1013,6 +1018,11 @@ a:visited a:hover a:active {
     flex-direction: column;
     align-items: center;
     text-align: center;
+  }
+}
+@media only screen and (min-width: 769px) {
+  .our-vpn__benefits div {
+    width: 95%;
   }
 }
 @media only screen and (min-width: 769px) {
