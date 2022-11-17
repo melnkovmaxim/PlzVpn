@@ -638,11 +638,6 @@ a:visited a:hover a:active {
     min-height: 733px;
   }
 }
-@media only screen and (min-width: 481px) and (max-width: 768px) {
-  .why-vpn {
-    height: 575px;
-  }
-}
 @media only screen and (max-width: 480px) {
   .why-vpn {
     padding-bottom: 20px;
@@ -683,6 +678,11 @@ a:visited a:hover a:active {
   .why-vpn__image {
     width: 352px;
     height: 309px;
+  }
+}
+@media screen and (max-width: 588px) {
+  .why-vpn__image {
+    display: none;
   }
 }
 @media only screen and (max-width: 480px) {
@@ -910,8 +910,23 @@ a:visited a:hover a:active {
   color: #4B4B4B;
   text-align: center;
 }
+@media screen and (max-width: 790px) {
+  .benefits__item p {
+    font-size: 22px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .benefits__item p {
+    font-size: 18px;
+  }
+}
 @media screen and (max-width: 391px) {
-  .benefits__item {
+  .benefits__item p {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 391px) {
+  .benefits__item p {
     font-size: 14px;
   }
 }
@@ -1098,7 +1113,8 @@ a:visited a:hover a:active {
 }
 @media only screen and (min-width: 481px) and (max-width: 768px) {
   .our-vpn__benefits img {
-    margin: 50px 0 0;
+    width: 90%;
+    margin: 20px auto 0;
   }
 }
 @media only screen and (max-width: 480px) {
