@@ -135,7 +135,7 @@
 
 .questions__arrow {
   cursor: pointer;
-  
+
   @include respond-to(mobile) {
     width: 16px;
     height: 16px;
