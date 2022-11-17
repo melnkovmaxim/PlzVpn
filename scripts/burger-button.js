@@ -14,7 +14,7 @@ const handleClick = () => {
         nav.classList.add('header__nav--visible');
         burgerButtonInner.classList.add('burger-button__inner--toggled');
     } else {
-        document.body.style.overflow = 'show';
+        document.body.style.overflow = 'scroll';
         modal.classList.remove('modal--visible');
         nav.classList.remove('header__nav--visible');
         burgerButtonInner.classList.remove('burger-button__inner--toggled');

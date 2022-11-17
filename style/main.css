@@ -1346,6 +1346,11 @@ a:visited a:hover a:active {
   padding: 0 0 25px 0;
   color: #4B4B4B;
 }
+@media only screen and (max-width: 480px) {
+  .questions__answer {
+    font-size: 14px;
+  }
+}
 .questions__checkbox {
   display: none;
 }
