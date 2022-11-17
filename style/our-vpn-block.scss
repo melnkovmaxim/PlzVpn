@@ -63,10 +63,17 @@
       text-align: center;
     }
 
+    div {
+      @include respond-to(desktop) {
+      }
+    }
+
     img {
-      width: 100%;
-      max-width: 570px;
-      max-height: 645px;
+
+      @include respond-to(desktop) {
+        width: 49%;
+        height: 49%;
+      }
 
       @include respond-to(tablet) {
         margin: 50px 0 0;
