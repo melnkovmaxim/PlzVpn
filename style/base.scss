@@ -58,9 +58,9 @@ a {
 }
 
 .burger-button {
-  position: relative;
+  position: absolute;
   width: $burger-button-width;
-  margin: 0 16px;
+  right: 19px;
 
   &__inner {
     top: 50%;

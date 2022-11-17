@@ -1,13 +1,13 @@
 @import 'base.scss';
 
 .main {
-  height: 650px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: $light-beige-color;
 
   @include respond-to(desktop) {
+    height: 650px;
     background-image: url('../images/main.png');
     background-position: center center;
     background-repeat: no-repeat;
@@ -18,22 +18,13 @@
     height: 650px;
   }
   @include respond-to(mobile) {
-    height: 545px;
+    padding: 70px 0 53px;
   }
 
   &__narrow {
     display: flex;
     width: 100%;
     flex-direction: column;
-  }
-
-  &__text {
-    margin: 35px 0 0;
-    background-color: $light-beige-color;
-
-    @media screen and (min-width: 769px) and (max-width: 1070px) {
-      background-color: transparent;
-    }
   }
 
   &__title {
@@ -53,6 +44,8 @@
 
     @include respond-to(mobile) {
       font-size: 32px;
+      max-width: 400px;
+      margin: 0 auto;
       line-height: 33.3px;
       text-align: center;
     }
@@ -68,6 +61,15 @@
     font-size: 22px;
     line-height: 27.5px;
     max-width: 750px;
+    background-color: $light-beige-color;
+
+    @media screen and (min-width: 769px) and (max-width: 1070px) {
+      background-color: transparent;
+    }
+
+    @include respond-to(desktop) {
+      margin: 35px 0 0;
+    }
 
     @include respond-to(tablet) {
       font-size: 21px;
@@ -82,6 +84,8 @@
       font-size: 16px;
       line-height: 20px;
       text-align: center;
+      max-width: 430px;
+      margin: 35px auto 0;
     }
   }
 
@@ -110,6 +114,7 @@
 
     @include respond-to(mobile) {
       font-size: 14px;
+      max-width: 200px;
     }
   }
 
@@ -124,6 +129,7 @@
 
     @include respond-to(mobile) {
       font-size: 14px;
+      max-width: 200px;
     }
   }
 }

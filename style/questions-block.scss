@@ -6,10 +6,20 @@
     font-size: 46px;
     color: $green-color;
     text-align: center;
-    margin: 100px 0 0 0;
+
+    @include respond-to(desktop) {
+      margin: 100px 0 0 0;
+    }
 
     @include respond-to(tablet) {
+      margin: 100px 0 0 0;
       font-size: 34px;
+    }
+
+    @include respond-to(mobile) {
+      font-size: 34px;
+      max-width: 400px;
+      margin: 50px auto 0;
     }
   }
 
@@ -18,7 +28,6 @@
     font-size: 18px;
     color: $dark-grey-color;
     text-align: center;
-    margin: 35px 0 0 0;
 
     @include respond-to(desktop) {
       max-width: 900px;
@@ -28,10 +37,26 @@
     @include respond-to(tablet) {
       font-size: 16px;
     }
+
+    @include respond-to(mobile) {
+      font-size: 14px;
+      margin-top: 30px;
+      line-height: 17.5px;
+    }
   }
 
   &__items {
-    margin: 80px 0 0 0;
+    @include respond-to(desktop) {
+      margin: 80px 0 0 0;
+    }
+
+    @include respond-to(tablet) {
+      margin: 60px 0 0 0;
+    }
+
+    @include respond-to(mobile) {
+      margin: 47px 0 0 0;
+    }
   }
 
   &__item {
@@ -62,6 +87,10 @@
       height: 30px;
     }
 
+    @include respond-to(mobile) {
+      height: 20px;
+    }
+
     p {
       font-weight: 400;
       font-size: 21px;
@@ -69,6 +98,10 @@
 
       @include respond-to(tablet) {
         font-size: 18px;
+      }
+
+      @include respond-to(mobile) {
+        font-size: 14px;
       }
     }
   }
@@ -93,5 +126,12 @@
     .questions__arrow {
       transform: rotate(180deg);
     }
+  }
+}
+
+.questions__arrow {
+  @include respond-to(mobile) {
+    width: 16px;
+    height: 16px;
   }
 }

@@ -6,6 +6,7 @@
   }
   @include respond-to(mobile) {
     padding: 0 20px;
+    justify-content: space-between;
   }
   display: flex;
   justify-content: space-around;
@@ -17,6 +18,11 @@
   &__logo {
     width: 70px;
     height: 80px;
+
+    @include respond-to(mobile) {
+      width: 50px;
+      height: 56px;
+    }
   }
 
   &__nav {
@@ -85,6 +91,7 @@
     }
 
     @include respond-to(mobile) {
+      margin-right: 50px;
       width: 160px;
     }
   }
