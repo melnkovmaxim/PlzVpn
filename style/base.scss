@@ -61,6 +61,7 @@ a {
   position: absolute;
   width: $burger-button-width;
   right: 19px;
+  cursor: pointer;
 
   &__inner {
     top: 50%;

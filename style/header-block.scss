@@ -85,6 +85,7 @@
     background-color: $green-color;
     color: white;
     border-radius: 51px;
+    cursor: pointer;
 
     @include respond-to(tablet) {
       width: 160px;
