@@ -189,20 +189,22 @@ a:visited a:hover a:active {
 }
 
 .header {
+  box-shadow: 0px 4px 36px rgba(139, 139, 139, 0.08);
+}
+.header__inner {
   display: flex;
   justify-content: space-around;
   align-items: center;
   height: 100px;
   font-size: 18px;
-  box-shadow: 0px 4px 36px rgba(139, 139, 139, 0.08);
 }
 @media only screen and (min-width: 481px) and (max-width: 768px) {
-  .header {
+  .header__inner {
     padding: 0 20px;
   }
 }
 @media only screen and (max-width: 480px) {
-  .header {
+  .header__inner {
     padding: 0 20px;
     justify-content: space-between;
   }
